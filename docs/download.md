@@ -8,7 +8,7 @@
 
 | Version | Notes |
 |---|---|
-| v0.1 | First build |
+| v0.0.1 | First build |
 
 ## Install
 
