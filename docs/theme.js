@@ -1,13 +1,35 @@
 (function() {
   // 1. Define and inject CSS rules into the page head
   const css = `
-    :root { --bg-color: #ffffff; --text-color: #24292f; --btn-bg: #f6f8fa; }
-    body.dark-theme { --bg-color: #0d1117; --text-color: #c9d1d9; --btn-bg: #21262d; }
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #24292f;
+      --btn-bg: #f6f8fa;
+      --border-color: #d0d7de;
+    }
+    body.dark-theme {
+      --bg-color: #0d1117;
+      --text-color: #c9d1d9;
+      --btn-bg: #21262d;
+      --border-color: #30363d;
+    }
     body {
       background-color: var(--bg-color) !important;
       color: var(--text-color) !important;
       transition: background-color 0.15s ease, color 0.15s ease;
     }
+    
+    /* FIXES FOR THE BROKEN TABLE */
+    table {
+      background-color: var(--bg-color) !important;
+      border-color: var(--border-color) !important;
+    }
+    th, td {
+      color: var(--text-color) !important;
+      background-color: transparent !important;
+      border-color: var(--border-color) !important;
+    }
+
     .theme-btn {
       background-color: var(--btn-bg);
       color: var(--text-color);
@@ -18,17 +40,23 @@
       border-radius: 6px;
       cursor: pointer;
     }
-    body.dark-theme .theme-btn { border-color: rgba(240, 246, 252, 0.1); }
-    body.dark-theme .icon-dark { display: none; }
-    body:not(.dark-theme) .icon-light { display: none; }
+    body.dark-theme .theme-btn {
+      border-color: rgba(240, 246, 252, 0.1);
+    }
+    body.dark-theme .icon-dark {
+      display: none;
+    }
+    body:not(.dark-theme) .icon-light {
+      display: none;
+    }
   `;
+
   const styleTag = document.createElement('style');
   styleTag.appendChild(document.createTextNode(css));
   document.head.appendChild(styleTag);
 
   // 2. Check local storage and apply dark mode state instantly
-  const savedTheme = localStorage.getItem('site-theme') || 
-                     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const savedTheme = localStorage.getItem('site-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-theme');
   }
@@ -43,7 +71,7 @@
     <span class="icon-light">☀️ Light Mode</span>
     <span class="icon-dark">🌙 Dark Mode</span>
   `;
-  
+
   // Inserts the button right into the document flow
   currentScript.parentNode.insertBefore(btn, currentScript);
 
