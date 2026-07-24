@@ -1,0 +1,21 @@
+name: Mac Cloud Build
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-mac:
+    runs-on: macos-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Run Mac Compilation Script
+        run: bash build_mac.sh
+
+      - name: Upload Finished Mac Executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: PyCity-Mac-Build
+          path: PyCity
