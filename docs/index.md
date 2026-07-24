@@ -1,6 +1,6 @@
 # PyCity
 
-<script src=`"theme.js`"></script>
+<script src="theme.js"></script>
 
 A road-building city sim. Zone the city, connect it, keep traffic moving.
 
