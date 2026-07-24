@@ -1,5 +1,7 @@
 # Download (Windows) — PyCity
 
+<script src="theme.js"></script>
+
 [Home](index.md) · **Download**
 
 # 64 bit
