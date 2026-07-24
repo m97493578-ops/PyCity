@@ -1,29 +1,26 @@
-name: Mac Cloud Build
+VERSION      = 0
+PATCHLEVEL   = 0
+SUBLEVEL     = 1
+CODENAME     = PyCity
+PROJECT_RELEASE = $(VERSION).$(PATCHLEVEL).$(SUBLEVEL)
 
-on:
-  push:
-    branches: [ main ]
+CC       = gcc
+INCLUDES = -ISrc/include -I/opt/homebrew/include
+LDFLAGS  = -L/opt/homebrew/lib
+LIBS     = -lraylib -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo
+TARGET   = PyCity
 
-jobs:
-  build-mac:
-    runs-on: macos-latest
-    steps:
-      - name: Check out repository code
-        uses: actions/checkout@v4
 
-      - name: Run Mac Compilation Script
-        run: |
-          NONINTERACTIVE=1 brew install raylib
-          make -f Src/Mac.mak
-          
-          # Create the official macOS application bundle structure
-          mkdir -p PyCity.app/Contents/MacOS
-          
-          # Move your compiled binary inside the app folder wrapper
-          mv PyCity PyCity.app/Contents/MacOS/
+all: banner compile
 
-      - name: Upload Finished Mac Executable
-        uses: actions/upload-artifact@v4
-        with:
-          name: PyCity-Mac-Build
-          path: PyCity.app
+banner:
+	@echo "========================================================="
+	@echo " Building Project Version: $(PROJECT_RELEASE)"
+	@echo " Codename: \"$(CODENAME)\""
+	@echo "========================================================="
+
+compile:
+	$(CC) Src/Main.c -o $(TARGET) $(CFLAGS) $(INCLUDES) $(LDFLAGS) $(LIBS)
+
+clean:
+	rm -f $(TARGET)

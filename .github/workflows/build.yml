@@ -15,9 +15,15 @@ jobs:
         run: |
           NONINTERACTIVE=1 brew install raylib
           make -f Src/Mac.mak
+          
+          # Create the official macOS application bundle structure
+          mkdir -p PyCity.app/Contents/MacOS
+          
+          # Move your compiled binary inside the app folder wrapper
+          mv PyCity PyCity.app/Contents/MacOS/
 
       - name: Upload Finished Mac Executable
         uses: actions/upload-artifact@v4
         with:
           name: PyCity-Mac-Build
-          path: PyCity
+          path: PyCity.app
