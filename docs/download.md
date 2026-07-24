@@ -8,6 +8,7 @@
 
 | Version | Notes |
 |---|---|
+| v0.0.2 | Second build with Art |
 | v0.0.1 | First build |
 
 ## Install
