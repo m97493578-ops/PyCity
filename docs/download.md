@@ -13,14 +13,10 @@
 
 [Download Beta/Alpha — .zip 32 bit](https://github.com/pycity-project/pycity-project.github.io/releases/download/v0.0.2/pycity-win32.zip) 
 
-<div class="theme-table-container">
-
 | Version | Notes |
 |---|---|
 | v0.0.2 | Second build with Art and 32 bit support |
 | v0.0.1 | First build |
-
-</div>
 
 ## Install 
 - Unzip the file 
