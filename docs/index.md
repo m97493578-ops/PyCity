@@ -1,5 +1,7 @@
 # PyCity
 
+<script src=`"theme.js`"></script>
+
 A road-building city sim. Zone the city, connect it, keep traffic moving.
 
 [Download for Windows](download.md)
