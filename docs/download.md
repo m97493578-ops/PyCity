@@ -16,7 +16,7 @@
 
 | Version | Notes |
 |---|---|
-| v0.0.2 | Second build with Art |
+| v0.0.2 | Second build with Art and 32 bit support|
 | v0.0.1 | First build |
 
 ## Install
