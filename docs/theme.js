@@ -19,15 +19,26 @@
       transition: background-color 0.15s ease, color 0.15s ease;
     }
     
-    /* FIXES FOR THE BROKEN TABLE */
-    table {
+    /* MANDATORY FIXES FOR GENERATED MARKDOWN TABLES */
+    .theme-table-container table {
       background-color: var(--bg-color) !important;
-      border-color: var(--border-color) !important;
+      color: var(--text-color) !important;
+      border-collapse: collapse !important;
+      border: 1px solid var(--border-color) !important;
+      width: 100%;
+      margin: 20px 0;
     }
-    th, td {
+    .theme-table-container th, 
+    .theme-table-container td {
       color: var(--text-color) !important;
       background-color: transparent !important;
-      border-color: var(--border-color) !important;
+      border: 1px solid var(--border-color) !important;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    .theme-table-container th {
+      background-color: var(--btn-bg) !important;
+      font-weight: 600;
     }
 
     .theme-btn {
@@ -39,6 +50,7 @@
       font-weight: 500;
       border-radius: 6px;
       cursor: pointer;
+      margin-bottom: 15px;
     }
     body.dark-theme .theme-btn {
       border-color: rgba(240, 246, 252, 0.1);

@@ -5,10 +5,12 @@
 
 # 64 bit 
 [Download latest build — .zip 64 bit](https://github.com/pycity-project/pycity-project.github.io/releases/latest/download/pycity-win64.zip) 
+
 [Download Beta/Alpha — .zip 64 bit](https://github.com/pycity-project/pycity-project.github.io/releases/download/v0.0.2/pycity-win64.zip) 
 
 # 32 Bit 
 [Download latest build — .zip 32 bit](https://github.com/pycity-project/pycity-project.github.io/releases/latest/download/pycity-win32.zip) 
+
 [Download Beta/Alpha — .zip 32 bit](https://github.com/pycity-project/pycity-project.github.io/releases/download/v0.0.2/pycity-win32.zip) 
 
 <div class="theme-table-container">
