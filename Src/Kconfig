@@ -1,0 +1,19 @@
+mainmenu "PyCity Architecture Build Configurator"
+
+choice
+    prompt "Target Architecture Selection"
+    default CONFIG_ARCH_X64
+    help
+      Select which compilation pipeline layout to deploy for your build.
+
+config CONFIG_ARCH_X64
+    bool "x64 Target (64-bit Production Binary)"
+    help
+      Compiles using the 64-bit MinGW toolchain and raylib64 libraries.
+
+config CONFIG_ARCH_X86
+    bool "x86 Target (32-bit Legacy Compatibility)"
+    help
+      Compiles using the 32-bit compatibility flags and raylib32 libraries.
+
+endchoice

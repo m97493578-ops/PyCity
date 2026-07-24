@@ -1,27 +1,6 @@
-VERSION      = 0
-PATCHLEVEL   = 0
-SUBLEVEL     = 2
-CODENAME     = PyCity
-PROJECT_RELEASE = $(VERSION).$(PATCHLEVEL).$(SUBLEVEL)
+SRC    = main.c
+LIBS   = -lraylib -lgdi32 -lwinmm -lopengl32 -mwindows
 
-CC       = gcc
-# --- UPDATED SANITIZER FLAGS FOR W64DEVKIT COMPATIBILITY ---
-CFLAGS   = -Wall -std=c99 -O2 -mwindows -s
-INCLUDES = -Iinclude
-LDFLAGS  = -Llib
-LIBS     = -lraylib -lopengl32 -lgdi32 -lwinmm
-TARGET   = PyCity.exe
-
-all: banner compile
-
-banner:
-	@echo "========================================================="
-	@echo " Building Project Version: $(PROJECT_RELEASE)"
-	@echo " Codename: \"$(CODENAME)\""
-	@echo "========================================================="
-
-compile:
-	$(CC) main.c -o $(TARGET) $(CFLAGS) $(INCLUDES) $(LDFLAGS) $(LIBS)
-
-clean:
-	rm -f $(TARGET)
+all:
+	gcc $(SRC) -o $(OUT) -I$(RAYLIB_DIR) -L$(RAYLIB_DIR) $(LIBS)
+	@echo ">>> Finished Compiling Target: $(OUT)"

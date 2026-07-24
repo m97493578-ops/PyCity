@@ -1,2 +1,3 @@
-Src/PyCity.exe
-Src/lib/
+*.exe
+
+*.ini
