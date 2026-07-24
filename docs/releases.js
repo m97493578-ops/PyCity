@@ -3,7 +3,7 @@ async function fetchLatestRelease() {
   
   try {
     // Fetches the latest release payload directly from your public GitHub repository
-    const response = await fetch('https://api.github.com/pycity-project/pycity-project.github.io/releases/latest');
+    const response = await fetch('https://api.github.com/repos/pycity-project/pycity-project.github.io/releases/latest');
     
     if (!response.ok) throw new Error('Failed to fetch release metadata');
     
